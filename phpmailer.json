@@ -4,6 +4,9 @@
   "version": "6.0.7",
   "description": "Implementation of PHPMailer",
   "license": "GPLv3",
+  "depends": [
+    "dynamicsuite >= 3.0.0"
+  ],
   "global": {
     "autoload": "lib",
     "init": "scripts/init.php"
