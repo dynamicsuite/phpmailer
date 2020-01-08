@@ -17,14 +17,8 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
  */
 
-namespace DynamicSuite\Package\Time;
+namespace DynamicSuite\Package\PHPMailer;
 use DynamicSuite\Instance;
-use DynamicSuite\Package\PHPMailer\PHPMailer;
 
 /** @var Instance $ds */
-if (DS_APCU && !isset($ds->mail)) {
-    $ds->registerGlobal('mail', new PHPMailer());
-    $ds->save();
-} else {
-    $ds->registerGlobal('mail', new PHPMailer());
-}
+$ds->registerPackage('email', new PHPMailer());
