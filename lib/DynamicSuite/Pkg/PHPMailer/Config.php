@@ -26,7 +26,7 @@ use PHPMailer\PHPMailer\SMTP;
 /**
  * Class Config.
  *
- * @package DynamicSuite\Package\PHPMailer
+ * @package DynamicSuite\Pkg\PHPMailer
  * @property int $debug
  * @property string $smtp_host
  * @property int $smtp_port

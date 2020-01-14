@@ -25,7 +25,7 @@ use PHPMailer\PHPMailer\Exception;
 /**
  * Class PHPMailer.
  *
- * @package DynamicSuite\Package\Time
+ * @package DynamicSuite\Pkg\PHPMailer
  * @property Config $cfg
  */
 class PHPMailer
