@@ -17,7 +17,9 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
  */
 
-namespace DynamicSuite\Package\PHPMailer;
+/** @noinspection PhpUnused */
+
+namespace DynamicSuite\Pkg\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 /**
@@ -34,7 +36,7 @@ class PHPMailer
      *
      * @var Config
      */
-    protected $cfg;
+    protected Config $cfg;
 
     /**
      * PHPMailer constructor.

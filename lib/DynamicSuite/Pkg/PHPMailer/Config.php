@@ -17,9 +17,10 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
  */
 
-namespace DynamicSuite\Package\PHPMailer;
-use DynamicSuite\DSConfig;
-use DynamicSuite\File;
+/** @noinspection PhpUnused */
+
+namespace DynamicSuite\Pkg\PHPMailer;
+use DynamicSuite\Base\DSConfig;
 use PHPMailer\PHPMailer\SMTP;
 
 /**
@@ -43,56 +44,56 @@ class Config extends DSConfig
      *
      * @var int
      */
-    protected $debug = SMTP::DEBUG_OFF;
+    protected int $debug = SMTP::DEBUG_OFF;
 
     /**
      * Host for outgoing mail server.
      *
      * @var string
      */
-    protected $smtp_host = 'mail.example.com';
+    protected string $smtp_host = 'mail.example.com';
 
     /**
      * Port for outgoing mail server.
      *
      * @var int
      */
-    protected $smtp_port = 587;
+    protected int $smtp_port = 587;
 
     /**
      * Username for outgoing mail server.
      *
      * @var string
      */
-    protected $smtp_username = 'noreply@example.com';
+    protected string $smtp_username = 'noreply@example.com';
 
     /**
      * Password for outgoing mail server.
      *
      * @var string
      */
-    protected $smtp_password = '';
+    protected string $smtp_password = '';
 
     /**
      * Security for outgoing mail server (tls, ssl, etc).
      *
      * @var string
      */
-    protected $smtp_secure = 'tls';
+    protected string $smtp_secure = 'tls';
 
     /**
      * Default from address for sent mail.
      *
      * @var string
      */
-    protected $default_from_addr = 'noreply@example.com';
+    protected string $default_from_addr = 'noreply@example.com';
 
     /**
      * Default from name for sent mail.
      *
      * @var string
      */
-    protected $default_from_name = 'My Name';
+    protected string $default_from_name = 'My Name';
 
     /**
      * Config constructor.
