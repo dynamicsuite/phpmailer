@@ -44,7 +44,7 @@ final class PHPMailer
      */
     public static function init(): void
     {
-        $hash = md5(__DIR__);
+        $hash = md5(__FILE__);
         if (DS_CACHING && apcu_exists($hash)) {
             self::$cfg = apcu_fetch($hash);
         } else {
