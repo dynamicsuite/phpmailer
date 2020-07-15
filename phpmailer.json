@@ -5,6 +5,8 @@
   "description": "Implementation of PHPMailer",
   "license": "LGPL-2.1",
   "global": {
-    "autoload": "lib"
+    "autoload": [
+      "lib"
+    ]
   }
 }
