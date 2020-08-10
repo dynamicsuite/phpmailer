@@ -33,7 +33,7 @@ final class PHPMailer
     /**
      * PHPMailer configuration.
      *
-     * @var Config
+     * @var Config|null
      */
     protected static ?Config $cfg = null;
 
