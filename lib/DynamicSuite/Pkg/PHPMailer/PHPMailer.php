@@ -26,26 +26,33 @@ use PHPMailer\PHPMailer\Exception;
  * Class PHPMailer.
  *
  * @package DynamicSuite\Pkg\PHPMailer
- * @property Config $cfg
  */
-class PHPMailer
+final class PHPMailer
 {
 
     /**
      * PHPMailer configuration.
      *
-     * @var Config
+     * @var Config|null
      */
-    protected Config $cfg;
+    protected static ?Config $cfg = null;
 
     /**
-     * PHPMailer constructor.
+     * Initialize the class configuration.
      *
      * @return void
      */
-    public function __construct()
+    public static function init(): void
     {
-        $this->cfg = new Config('phpmailer');
+        $hash = md5(__FILE__);
+        if (DS_CACHING && apcu_exists($hash)) {
+            self::$cfg = apcu_fetch($hash);
+        } else {
+            self::$cfg = new Config('phpmailer');
+            if (DS_CACHING) {
+                apcu_store($hash, self::$cfg);
+            }
+        }
     }
 
     /**
@@ -54,18 +61,21 @@ class PHPMailer
      * @return \PHPMailer\PHPMailer\PHPMailer
      * @throws Exception
      */
-    public function create()
+    public static function create()
     {
+        if (!self::$cfg) {
+            self::init();
+        }
         $mail = new \PHPMailer\PHPMailer\PHPMailer(true);
-        $mail->SMTPDebug = $this->cfg->debug;
+        $mail->SMTPDebug = self::$cfg->debug;
         $mail->isSMTP();
-        $mail->Host = $this->cfg->smtp_host;
+        $mail->Host = self::$cfg->smtp_host;
         $mail->SMTPAuth = true;
-        $mail->Username = $this->cfg->smtp_username;
-        $mail->Password = $this->cfg->smtp_password;
-        $mail->SMTPSecure = $this->cfg->smtp_secure;
-        $mail->Port = $this->cfg->smtp_port;
-        $mail->setFrom($this->cfg->default_from_addr, $this->cfg->default_from_name);
+        $mail->Username = self::$cfg->smtp_username;
+        $mail->Password = self::$cfg->smtp_password;
+        $mail->SMTPSecure = self::$cfg->smtp_secure;
+        $mail->Port = self::$cfg->smtp_port;
+        $mail->setFrom(self::$cfg->default_from_addr, self::$cfg->default_from_name);
         return $mail;
     }
 

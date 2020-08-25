@@ -20,7 +20,7 @@
 /** @noinspection PhpUnused */
 
 namespace DynamicSuite\Pkg\PHPMailer;
-use DynamicSuite\Base\DSConfig;
+use DynamicSuite\Core\GlobalConfig;
 use PHPMailer\PHPMailer\SMTP;
 
 /**
@@ -36,7 +36,7 @@ use PHPMailer\PHPMailer\SMTP;
  * @property string $default_from_addr
  * @property string $default_from_name
  */
-class Config extends DSConfig
+class Config extends GlobalConfig
 {
 
     /**
