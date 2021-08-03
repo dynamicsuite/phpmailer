@@ -1,32 +1,24 @@
 <?php
-/*
- * PHPMailer Package
- * Copyright (C) 2020 Dynamic Suite Team
+/**
+ * This file is part of the Dynamic Suite PHPMailer package.
  *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation version 3.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software Foundation,
- * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
+ * @package DynamicSuite\PHPMailer
+ * @author Grant Martin <commgdog@gmail.com>
+ * @copyright 2021 Dynamic Suite Team
+ * @noinspection PhpUnused
  */
 
-/** @noinspection PhpUnused */
-
-namespace DynamicSuite\Pkg\PHPMailer;
-use DynamicSuite\Core\GlobalConfig;
+namespace DynamicSuite\PHPMailer;
+use DynamicSuite\JSONConfig;
 use PHPMailer\PHPMailer\SMTP;
 
 /**
  * Class Config.
  *
- * @package DynamicSuite\Pkg\PHPMailer
+ * @package DynamicSuite\PHPMailer
  * @property int $debug
  * @property string $smtp_host
  * @property int $smtp_port
@@ -36,7 +28,7 @@ use PHPMailer\PHPMailer\SMTP;
  * @property string $default_from_addr
  * @property string $default_from_name
  */
-class Config extends GlobalConfig
+class Config extends JSONConfig
 {
 
     /**

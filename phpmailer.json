@@ -1,12 +1,10 @@
 {
   "name": "PHPMailer",
   "author": "Dynamic Suite Team",
-  "version": "6.1.4.2",
+  "version": "6.4.0",
   "description": "Implementation of PHPMailer",
   "license": "LGPL-2.1",
-  "global": {
-    "autoload": [
-      "lib"
-    ]
-  }
+  "autoload": [
+    "libraries/"
+  ]
 }
